@@ -52,3 +52,28 @@
 - 协同开发，使用git进行版本控制。
 - 有问题及时反馈，及时解决。
 
+
+### How to use
+
+1.安装所需依赖
+
+```text
+pip install -r requirements.txt
+```
+
+2.配置好config.py文件中的Mysql数据库配置,先创建好对应数据库，然后进行数据库迁移操作
+```text
+python manages.py db init  #初始化数据库
+python manages.py db migrate 
+python manages.py db upgrade
+```
+
+3.进行数据爬取
+```text
+python manages.py spider
+```
+
+4.爬取结束后，运行flask,访问 `127.0.0.1:8000`即可使用
+```text
+python app.py
+```
